@@ -1,0 +1,6 @@
+﻿node_modules/
+.cache/
+.next/
+dist/
+.env
+.env.local

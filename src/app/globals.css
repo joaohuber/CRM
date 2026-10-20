@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Identidade Lensi: preto da logo, branco e o degradê azul do "N" (ciano no topo, azul embaixo) */
+@theme {
+  --color-ink: #000000;
+  --color-canvas: #05070b;
+  --color-panel: #0b0f15;
+  --color-raised: #121821;
+  --color-line: #1d2531;
+  --color-line-strong: #2b3646;
+  --color-fg: #f5f8fc;
+  --color-muted: #97a3b4;
+  --color-faint: #5d697a;
+
+  --color-brand-cyan: #00b4fe;
+  --color-brand-sky: #009efd;
+  --color-brand-mid: #0a84ff;
+  --color-brand-blue: #0059ff;
+}
+
+html {
+  color-scheme: dark;
+}
+
+@layer components {
+  .input {
+    @apply block w-full rounded-lg border border-line bg-raised px-3 py-2 text-sm text-fg placeholder:text-faint focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/20 focus:outline-none;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium text-muted;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line-strong bg-raised px-3 py-2 text-sm font-medium text-fg transition hover:border-brand-sky/60 hover:bg-line disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-linear-to-b from-brand-mid to-brand-blue px-3 py-2 text-sm font-semibold text-white shadow-[0_0_0_1px_rgba(0,180,254,0.25),0_6px_20px_-8px_rgba(0,89,255,0.7)] transition hover:brightness-110 disabled:opacity-50;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-panel;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset;
+  }
+  .brand-text {
+    @apply bg-linear-to-b from-brand-cyan to-brand-blue bg-clip-text text-transparent;
+  }
+}
